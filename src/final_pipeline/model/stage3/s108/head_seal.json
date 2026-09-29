@@ -1,0 +1,32 @@
+{
+  "schema": "s108-final-head-seal-v1",
+  "trained": true,
+  "test_only": false,
+  "role": "final-all-train",
+  "head": {
+    "bytes": 835023,
+    "sha256": "cb155a2ac2cfbdda14bcbd430ee3cbf99280830fd39f4284815b5599d219cf40"
+  },
+  "config": {
+    "bytes": 899,
+    "sha256": "624fa0252920b3e33a47e1138912baef6587471685e8dd171b828efb9d40cce1"
+  },
+  "training_evidence": {
+    "bytes": 2749,
+    "sha256": "dfaccf278c0c943f89600a7bfd7a55b45541c78f5868e841000ad858fba0a5bc"
+  },
+  "training_interfaces": {
+    "head.py": {
+      "bytes": 2398,
+      "sha256": "8503e54bae6ddbb14179f099c12344f57e7d36f0e45a0f1338eada2ae79f0e02"
+    },
+    "cache.py": {
+      "bytes": 2441,
+      "sha256": "74cbeea968565f4dfe32864f573f821779d75b1b38c320bfb08b05ce80d2ed17"
+    },
+    "windows5hz.py": {
+      "bytes": 4380,
+      "sha256": "bc6b323da81fe1394e33ce669d308376a73bc0b3e8ebb44407f2c930768e6fbd"
+    }
+  }
+}

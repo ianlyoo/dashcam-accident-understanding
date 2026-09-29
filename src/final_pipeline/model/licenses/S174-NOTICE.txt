@@ -1,0 +1,7 @@
+S174 coverage extension to exact S171 S161, no new pretrained weights.
+The original S161 accepted crossing is returned unchanged. On its abstentions,
+S174 tests up to three COCO vehicles close to the final S160 collision,
+alternative fixed camera corridor widths/horizons, and native-frame crossing
+refinement. Original S161 and COCO detector notices/licenses are retained.
+No entry-label fitting or private evaluation input. Only entry_frame can change;
+the inherited S171 adapter clamps it to collision_frame.

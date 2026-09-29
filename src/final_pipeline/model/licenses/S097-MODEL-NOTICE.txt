@@ -1,0 +1,46 @@
+S097 adapts the DINOv2 Base head while preserving the scored S094 Small head
+and fixed equal-probability ensemble. Only Base head.bin, its runtime_config
+head SHA and the runtime EXPECTED_IDENTITIES Base hash change; this notice
+is added. The scored S094 ZIP SHA256 is:
+5d5d367ab0c0976fcb75020936a3a676b6dbedbf478c101ce812af097d21d2d5
+The fixed Small head SHA256 remains:
+947d0cf8696151d8208f506fd358c10fe2db814ec343e56212fdb9767f84ef7a
+The original scored S090 Base final initialization SHA256 is:
+eaea42350b8f11ad91bdd7d929db36d25f90c25b186bccb97987b32df048e18c
+The new final head and all five CV heads are identified by the bound S097
+training seal, training evaluation and export manifest. New Base weights
+are not the original S090 weights; S090 metadata identifies initialization.
+
+Each of six fits initializes from its matching S090 head and uses fresh
+AdamW,100 updates,lr3e-5,weight-decay.01,clip1,seed71,global-drop.5 and
+external ranking.25. Seed77 schedules50 native/50 canonical updates with
+the same three variants and probabilities.5/.25/.25. Final492 FIT and five
+490 FIT numeric O/R folds use existing expanded S092/S093 data. Final
+initialization used306 rows; each CV initialization used its matching304.
+No final-head initialization is used for CV. Both frozen backbones,6144-wide
+Base descriptors,3072-wide Small descriptors,144 views, shared decode,
+geometry operators,threshold0.5 and equal family mean remain as in S094.
+Main inference,Stage2/3 and all other payload members remain byte-identical.
+
+The existing186 additional DLC sessions (46 originals/140 replays) occur
+in61 groups,47 overlapping earlier training and14 additional. These are not
+186 independent sources or fresh confirmation. S097 extracts Base features
+for these existing videos; it does not reuse Small descriptors as Base input.
+All original model cards and source/license notices are retained, including
+DLC CC-BY-SA2.5 provenance. Historical S090/S094 notices describe the inherited
+sources and prior models; this notice specifies the changed Base head.
+
+External76 and phone8 remain excluded from fitting. Native86 and matching
+CV10 are exposed development evidence. New Base folds combine with saved
+matching S093 Small folds; this is not a fresh benchmark. Actual exported
+phone8 predictions are evaluated independently after export. No JPEG loss,
+JPEG inference, teacher, LoRA, private-data adaptation or weight sweep is used.
+
+S094 remains the official champion. S096's reported regression does not
+establish the cause of private errors or prove an S097 gain. Actual Windows
+and Linux QA checks the changed head and independent-file behavior. Reused
+S094 decoder/container and fault evidence retains its original scope. Local
+phone results are advisory; a perfect score is not a release requirement.
+The parent binds both QA reports and an explicit whole-runtime assessment
+before packaging. No official gain, automatic upload or runtime guarantee
+is claimed.

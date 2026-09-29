@@ -1,0 +1,18 @@
+S160 collision temporal localizer (on top of the S156 cascade), 2026-09-27
+
+After the S144 re-ranker ranks the collision candidates of a long clip (n>310) and the S156 cascade
+has refined its onset, the S160 localizer scores every frame of the +-45-frame windows around all ten
+ranked candidates jointly. Each row has the S147 refiner v2 motion features (relative to its
+candidate), the S156 candidate features (rank, rank-mean score, gap to the best, member percentiles)
+and the candidate's S142 base vector (H1 motion 34 + box 30), S144 contact features (14) and their
+within-clip context (28). Two NumPy-portable HistGradientBoosting row models (binary |t-event|<=0.3 s)
+are fused with ten small listwise temporal networks (torch, CPU; softmax over all rows, trained to
+maximize the probability mass within +-0.3 s plus a Gaussian soft-label term). The fused row
+probabilities are summed per frame and the frame with the most mass within +-9 frames is chosen.
+Any localizer error keeps the S156 onset. Inputs are the S109 motion signals and the candidate
+vectors already computed for the clip; no new images are read and no weights are downloaded.
+
+Fit sources: the 750 Nexar train positives only (same source, revision, citation and licence as
+S142/S144/S156; see NEXAR-DATASET-LICENSE.txt and S144-NOTICE.txt); labels use the nominal Nexar
+time_of_event (not verified physical contact). No private evaluation files were used.
+Code and receipts: candidates/s160_coll_loc/, $DATA_DIR/s160_coll_loc/.

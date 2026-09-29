@@ -1,0 +1,204 @@
+{
+  "selected": "exported HGB(126,1) + Conv(0..4)/MLP(0..4), 25 epochs, temp=1, w_nn=1, half=9",
+  "reason": "finalize.log, localizer.json train configuration and exported state agree; retain completed selected export",
+  "handoff_correction": "nn_soft1_ep40 half0/3/6/9 are separate decoding settings, not an ensemble and not the exported final fit",
+  "config": {
+    "format": "s160_loc_v1",
+    "signals": [
+      "ego_speed",
+      "ego_scale",
+      "ego_theta",
+      "ego_shift_y",
+      "resid_median",
+      "resid_outlier",
+      "resid_energy",
+      "resid_center_x",
+      "warp_diff",
+      "tracked"
+    ],
+    "k": 10,
+    "half_window": 45,
+    "n_ranked": 10,
+    "member_pct_order": [
+      0,
+      1,
+      2
+    ],
+    "temp": 1.0,
+    "half": 9,
+    "w_nn": 1.0,
+    "nn_keys": [
+      "n0",
+      "n1",
+      "n2",
+      "n3",
+      "n4",
+      "n5",
+      "n6",
+      "n7",
+      "n8",
+      "n9"
+    ],
+    "nn_arch": [
+      "conv",
+      "conv",
+      "conv",
+      "conv",
+      "conv",
+      "mlp",
+      "mlp",
+      "mlp",
+      "mlp",
+      "mlp"
+    ],
+    "nn_file": "loc_nn.npz",
+    "train": {
+      "hgb_seeds": [
+        126,
+        1
+      ],
+      "iters": 600,
+      "leaves": 31,
+      "leaf": 80,
+      "lr_hgb": 0.05,
+      "nets": [
+        "conv:0",
+        "conv:1",
+        "conv:2",
+        "conv:3",
+        "conv:4",
+        "mlp:0",
+        "mlp:1",
+        "mlp:2",
+        "mlp:3",
+        "mlp:4"
+      ],
+      "hidden": 96,
+      "epochs": 25,
+      "lr": 0.002,
+      "soft": 1.0,
+      "sigma": 0.1,
+      "temp": 1.0,
+      "half": 9,
+      "w_nn": 1.0,
+      "device": "cuda",
+      "skip_fit": false,
+      "limit": 0
+    }
+  },
+  "final_parity": {
+    "clips": 750,
+    "row_max_abs_diff": 0.0,
+    "nn_logit_max_abs_diff": 0.0,
+    "package_vs_research_agreement": 750,
+    "disagree": [],
+    "in_sample_hit_0p3": 659,
+    "package_s_per_clip_mean": 0.9358188245334313,
+    "package_s_per_clip_p95": 1.128793670007144,
+    "seconds": 1256.7
+  },
+  "summaries": {
+    "summary_gbdt_hgb10": {
+      "half0": 397,
+      "half3": 406,
+      "half6": 418
+    },
+    "summary_gbdt_hgb10_big": {
+      "half0": 409,
+      "half3": 418,
+      "half6": 423
+    },
+    "summary_gbdt_hgb10_big_s1": {
+      "half0": 412,
+      "half3": 415,
+      "half6": 420
+    },
+    "summary_gbdt_hgb10_nocand": {
+      "half0": 390,
+      "half3": 399,
+      "half6": 401
+    },
+    "summary_gbdt_hgb10_s1": {
+      "half0": 410,
+      "half3": 408,
+      "half6": 416
+    },
+    "summary_gbdt_hgb10_xl": {
+      "half0": 425,
+      "half3": 420,
+      "half6": 425
+    },
+    "summary_gbdt_hgb5": {
+      "half0": 400,
+      "half3": 402,
+      "half6": 406
+    },
+    "summary_nn_base5": {
+      "half0": 385,
+      "half3": 390,
+      "half6": 390,
+      "half9": 396
+    },
+    "summary_nn_base_gpu_s0": {
+      "half0": 375,
+      "half3": 372,
+      "half6": 375,
+      "half9": 372
+    },
+    "summary_nn_soft1": {
+      "half0": 414,
+      "half3": 421,
+      "half6": 422,
+      "half9": 426
+    },
+    "summary_nn_soft1_ep40": {
+      "half0": 412,
+      "half3": 411,
+      "half6": 419,
+      "half9": 423
+    },
+    "summary_nn_soft1_mlp": {
+      "half0": 411,
+      "half3": 421,
+      "half6": 427,
+      "half9": 437
+    },
+    "summary_nn_soft1_s07": {
+      "half0": 406,
+      "half3": 408,
+      "half6": 416,
+      "half9": 425
+    },
+    "summary_nn_soft1_s15": {
+      "half0": 407,
+      "half3": 418,
+      "half6": 428,
+      "half9": 429
+    },
+    "summary_nn_soft1b": {
+      "half0": 412,
+      "half3": 411,
+      "half6": 424,
+      "half9": 421
+    },
+    "summary_nn_soft3": {
+      "half0": 405,
+      "half3": 408,
+      "half6": 417,
+      "half9": 428
+    }
+  },
+  "exact_final_ensemble_oof_available": false,
+  "fixed_oof_proxy": {
+    "hits_0p3": 458,
+    "clips": 750,
+    "s156_hits_0p3": 393,
+    "description": "Two matching HGB OOFs; five Conv seeds; only three MLP seeds available, weighted 50/50 by architecture. Final fit also uses MLP seeds 3,4. This is a proxy, not exact final-ensemble OOF; no new sweep.",
+    "weight_decay": "Both finalize.py and OOF train_nn.py explicitly use .001"
+  },
+  "official_gain_measured": false,
+  "exported_weights": {
+    "loc_nn.npz": "c2a6453e23bd8c9f2a0d442041db506f6f95bb868c5d50ec16c2554f8533404f",
+    "localizer.json": "c2554c1c5f1dbcaabbc1baef18c64dab84311d7a449be13258da8740bc48b315"
+  }
+}

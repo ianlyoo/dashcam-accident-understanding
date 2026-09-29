@@ -1,0 +1,6 @@
+S181 collision-relative entry fallback on exact S180. Only S161
+short_track, not_in_lane_at_collision, and far_inside_when_first_seen
+after S174/S176 abstain use collision minus 0.85 seconds. The gap is
+the median of 52 public accepted S161 crossings, not a fitted hidden
+label. It is clamped to the clip start and collision. Other outputs
+remain S180. No new model weights or inference dependencies.

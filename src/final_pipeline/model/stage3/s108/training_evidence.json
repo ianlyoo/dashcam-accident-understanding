@@ -1,0 +1,101 @@
+{
+  "status": "completed",
+  "purpose": "final-fit",
+  "completed_utc": "2026-09-17T13:11:01.728752+00:00",
+  "head": {
+    "bytes": 835023,
+    "sha256": "cb155a2ac2cfbdda14bcbd430ee3cbf99280830fd39f4284815b5599d219cf40"
+  },
+  "operator": {
+    "version": "s108-5hz-in-10hz-out-v1",
+    "block_frames": 64,
+    "input_indices": "clip(s-32+2*j,0,N-1);j=0..63",
+    "keep_temporal": [
+      8,
+      24
+    ],
+    "frames_per_row": 4,
+    "pool": "numpy-float64-6x6-mean-to-float32-row-major-4x4",
+    "codec": "float32-to-float16-to-float32",
+    "head": "S108Head",
+    "head_kwargs": {
+      "frames_per_row": 4
+    },
+    "head_sequence": "whole-file-ordered",
+    "decoder": "argmax",
+    "encoder_parameters": "float32",
+    "encoder_autocast": "cuda-bfloat16",
+    "crop": 384,
+    "resize_short": 438,
+    "interpolation": "cv2.INTER_LINEAR",
+    "rgb_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "rgb_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "fallback": "s105-accel-and-steering-on-observer-or-head-failure"
+  },
+  "optimizer_steps": 1960,
+  "epoch_losses": [
+    1.2143524735401838,
+    0.9351738518247238,
+    0.8367390579854449,
+    0.8095698957259838,
+    0.7925869735913017,
+    0.777599675527726,
+    0.763713120447639,
+    0.7569069977521371,
+    0.7417856103773468,
+    0.7364321424494473,
+    0.7189674396020097,
+    0.7113916924378524,
+    0.7110111663804557,
+    0.7029020474810237,
+    0.6892909127898,
+    0.6805115150802661,
+    0.6741990877834794,
+    0.6663296705989453,
+    0.6689645309965365,
+    0.65849247479077,
+    0.655163386176215,
+    0.6454698879150853,
+    0.647811771814192,
+    0.6550817026517903,
+    0.6445618672165064,
+    0.640218576667711,
+    0.6325391315980456,
+    0.6328080850357835,
+    0.6252071454455383,
+    0.6204931799076849,
+    0.6195505724270614,
+    0.6168234080180693,
+    0.602713846817362,
+    0.6011175473129604,
+    0.6002488022708209,
+    0.6019992928962427,
+    0.5956369538370592,
+    0.594621510790864,
+    0.5870932518695601,
+    0.5844399944501885
+  ],
+  "epochs": 40,
+  "seed": 10805,
+  "accum_segments": 8,
+  "training_source_sha256": "446b147b5eda495cf9381e20632a2b5cfe9d041bf9e476ca3fb1753a7957e9b3",
+  "corpus_manifest_sha256": "f2e646bfc23f498d32762266351f6a47de66462764dc9f6286d76db4f03229b6",
+  "plan": {
+    "bytes": 3613,
+    "sha256": "2b3173a15c1532096a74a52f98a61e1bd4a4db0ee79ad490fe6094aa825fb683"
+  },
+  "training_rows": {
+    "bytes": 19312,
+    "sha256": "59272b16065a71010c4279ea0b762d6edee5e69e0de1160f4c8d764aea4f5c47"
+  },
+  "wall_seconds_before_references": 111.06398120000085,
+  "training_rows_are_not_held_validation": true
+}

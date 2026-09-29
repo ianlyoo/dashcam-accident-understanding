@@ -1,0 +1,50 @@
+S090 frozen DINOv2-Base capacity challenger to S079, September12,2026.
+
+The Stage1 pretrained representation changes from ordinary DINOv2-Small to
+ordinary facebook/dinov2-base. The Base model is used frozen, without register
+tokens, remote code, task-data backbone adaptation or network access at inference.
+Source: https://huggingface.co/facebook/dinov2-base
+Pinned revision: f9e44c814b77203eaa57a6bdbbd535f21ede1415
+Safetensors SHA256:
+d73036b56966966d07975d696bde331762f37297e2f095de8cea0040c3aa0841
+Config SHA256:
+f7ff4cfa73d2f70647dbf6950541ad25d73082d54c2e7e9bded160c7656b2a70
+Copyright and license: Meta Platforms, Inc. and affiliates; Apache License2.0.
+The full license is retained in DINOv2-LICENSE.txt, and the exact pinned model
+card in DINOv2-BASE-MODEL-CARD.md. Upstream implementation/license:
+https://github.com/facebookresearch/dinov2
+
+The 768-wide,12-block Base network supplies four hidden states (3/6/9/12),
+normalized by its final LayerNorm. Patch means and population standard deviations
+form6144-dimensional descriptors. The head's shared first projection widens
+from3072 to6144 input values; its128-wide embeddings and384->64->1 classifier
+remain unchanged. A new head is trained from scratch. The changed input width
+also changes its random initialization trajectory; this is a whole capacity
+experiment, not an isolated causal attribution to pretrained features alone.
+
+Same306 final FIT videos as S079:194 Scoop,102 DLC,10 official organizer TRAIN
+videos. The76 reused external development videos and8 old phone videos are
+excluded from final fitting. Five304-row numeric-pair CV heads provide reused
+development evidence, not established scene-independent confirmation. No new
+task videos or private evaluation data are used. Every Base training descriptor
+is recomputed from authenticated source frames; Small descriptor arrays are not
+reused. Source/data licenses and acquisition records remain applicable.
+
+The training recipe retains seed71,400AdamW updates,lr3e-4,weight decay.01,
+global-branch dropout.5, equal-corpus/source/class loss balancing, external-only
+ranking coefficient.25 and the seed77 balanced200/200 geometry schedule.
+Sampling, native and canonical720 geometry, crops, three training variants,
+pooling and threshold.5 remain S079. This does not use S088 target reweighting.
+
+Inference independently decodes each file with the scored optional-PTS decoder,
+performs native and canonical Base passes (72 total views), then averages the
+two batch-one sigmoid probabilities of the shared head. The FP32 context,
+main inference entrypoint and Stage2/3 payload bytes remain S079. There is no
+cross-file model state, fitting, pseudo-labeling or network dependency.
+
+No raw training or user videos are distributed in this package. Retained earlier
+Small-model cards and Stage1 notices document historical provenance; their
+Small-backbone/head dimensions are superseded by this notice and the packaged
+Base configuration. Other unchanged component licenses/notices still apply.
+Local development results cannot establish an official score gain; S079 remains
+the scored champion until a better eligible whole-artifact result is obtained.

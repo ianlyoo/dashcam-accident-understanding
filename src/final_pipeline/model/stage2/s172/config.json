@@ -1,0 +1,19 @@
+{
+  "format": "s172_visual_v1",
+  "heads": [
+    "head_0.pt",
+    "head_1.pt"
+  ],
+  "kind": "product",
+  "weight": 0.5,
+  "half": 9,
+  "refine": false,
+  "selected_oof_hits": 482,
+  "baseline_oof_hits": 458,
+  "coarse_hz": 2.5,
+  "refine_hz": 10,
+  "batch": 16,
+  "own_limit_seconds": 600,
+  "process_limit_seconds": 2700,
+  "oof_rate_record": "rate_2p5.json"
+}

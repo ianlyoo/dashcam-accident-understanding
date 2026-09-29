@@ -1,0 +1,14 @@
+S161 entry crossing timing, 2026-09-27
+
+Own S132 tracker adapted for observed outside-to-inside crossings, anchored at
+the final S156 collision. Low-confidence and already-inside tracks retain the
+S109 entry (clamped to collision). No side/evasion modifications. Sampling and
+fallback are per file; no shared cumulative runtime cutoff.
+
+The unmodified Faster R-CNN COCO weights are reused from model/stage2/s144/
+detector.pth (SHA256 dd69338a24b8d7381807e247652bdc356325bcbaf1cd3e092e00e0a1a58706bf).
+Torchvision BSD-3-Clause and COCO provenance notices are preserved from S156.
+No new training and no private evaluation access. Public CCD consensus,
+Nexar model-blind labels and S117 intervals are reused evaluation proxies.
+The box lower edge and a flat-road lane trapezoid approximate wheel contact;
+they are not wheel keypoints or a measured lane boundary.

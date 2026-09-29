@@ -1,0 +1,7 @@
+{
+  "backbone_config_sha256": "f7ff4cfa73d2f70647dbf6950541ad25d73082d54c2e7e9bded160c7656b2a70",
+  "backbone_sha256": "d73036b56966966d07975d696bde331762f37297e2f095de8cea0040c3aa0841",
+  "head_sha256": "01787ab548b69cb7f7f92291610dff6534a8818cdfd4f72bd9717f43dc555566",
+  "head_type": "mlp",
+  "schema": "s071-runtime-v1"
+}

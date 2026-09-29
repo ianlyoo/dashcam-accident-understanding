@@ -1,0 +1,37 @@
+{
+  "schema": "s108-head-config-v1",
+  "operator": {
+    "version": "s108-5hz-in-10hz-out-v1",
+    "block_frames": 64,
+    "input_indices": "clip(s-32+2*j,0,N-1);j=0..63",
+    "keep_temporal": [
+      8,
+      24
+    ],
+    "frames_per_row": 4,
+    "pool": "numpy-float64-6x6-mean-to-float32-row-major-4x4",
+    "codec": "float32-to-float16-to-float32",
+    "head": "S108Head",
+    "head_kwargs": {
+      "frames_per_row": 4
+    },
+    "head_sequence": "whole-file-ordered",
+    "decoder": "argmax",
+    "encoder_parameters": "float32",
+    "encoder_autocast": "cuda-bfloat16",
+    "crop": 384,
+    "resize_short": 438,
+    "interpolation": "cv2.INTER_LINEAR",
+    "rgb_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "rgb_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "fallback": "s105-accel-and-steering-on-observer-or-head-failure"
+  }
+}

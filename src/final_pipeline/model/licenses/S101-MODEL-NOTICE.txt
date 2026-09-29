@@ -1,0 +1,22 @@
+S101 matched delivery-retention study, September15, 2026.
+
+Selected arm: delivery (symmetric JPEG90 exposure plus clean logit retention).
+
+The selected Small/Base classification heads continue from exact S097 on the
+same492 FIT rows. The study compares retained clean continuation with symmetric,
+label-preserving JPEG90 exposure on both originals and recaptures. See the
+export/training records and head hashes for the selected arm and evidence.
+The new retention term matches clean raw teacher logits; no new official gain
+is established by reused local validation. This is not a physical recapture
+dataset or an H264 simulation. No JPEG transform runs in deployed inference.
+
+Source labels remain unchanged, including the provided public simulated example
+labels. Official-training files and their byte-identical sample aliases are
+part of FIT as recorded. Private evaluation files are inference-only; no batch
+adaptation, pseudo-labeling or cross-file prediction statistics are used.
+
+Frozen DINOv2 Small/Base weights, source cards and Apache2.0 licenses are retained
+unchanged from S097. The model architectures, decoder, two-geometry144 views,
+equal probability mixture and Stage2/3 code/weights are unchanged. The additional
+head training and paired study orchestration are project modifications. All
+prior dataset/source license notices are retained. No inference-time download.

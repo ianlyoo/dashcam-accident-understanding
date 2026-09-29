@@ -1,0 +1,5 @@
+S180 residual entry adjustment on exact S178. Only accepted S174-only
+geometric crossings receive +0.2 seconds, clamped to collision.
+The shift models a tracked vehicle box entering the ego corridor
+before the wheel contact. Every other S178 output remains unchanged.
+No new model weights or inference dependencies; original notices remain.

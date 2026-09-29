@@ -1,0 +1,33 @@
+{
+  "schema": "s109-deployment-selection-v1",
+  "created_utc": "2026-09-18T10:03:44.671695+00:00",
+  "recipe": "base75_vjepa25_incumbent_decoder",
+  "video_weight": 0.25,
+  "incumbent_artifact": "S105",
+  "incumbent_sha256": "55349240fb2d0e8dafb40a3096e270130f3a3da96d54a6282141b54eecc3b441",
+  "asset_carrier": "S108",
+  "asset_carrier_sha256": "62b4915eec2e37f9dc36fe4588ce3956537d2bf5ad3c33a8a3c289f7e4750f65",
+  "adapter": {
+    "bytes": 5239,
+    "sha256": "a4d12be44a01c8eeb9e23f62b642a078352f92bc30c934b7875d2fa49a95a7eb"
+  },
+  "video_head_sha256": "cb155a2ac2cfbdda14bcbd430ee3cbf99280830fd39f4284815b5599d219cf40",
+  "motion_head_sha256": "426df59dc5cb2cbc3633c9d2d458a07c9a61fa56fd46a6a2580ff7c73fd43fd8",
+  "decoder": {
+    "requested_samples": 10,
+    "effective_samples": 11,
+    "padding": "edge",
+    "log_bias": [
+      -0.25,
+      -0.5,
+      0.0,
+      -0.75
+    ]
+  },
+  "head_training_changed": false,
+  "new_fit": false,
+  "training_metadata_scope": "Unchanged S108 metadata identifies reused video subsystem, not this final mixture",
+  "selection_evidence": "Reused OOF macroF1 .6700999939 versus S105 recipe .6057265895; S108 pure video officially regressed despite better OOF",
+  "rationale": "Keep proven motion probabilities primary; test video evidence as an auxiliary, not another pure replacement",
+  "official_gain_claimed": false
+}

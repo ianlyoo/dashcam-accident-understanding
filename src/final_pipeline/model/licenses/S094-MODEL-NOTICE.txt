@@ -1,0 +1,20 @@
+S094 fixed S090 Base / S093 adapted Small ensemble, September13,2026.
+
+Both previously scored constituent heads and pretrained backbones are retained
+byte-for-byte. The S090 and S093 model notices document their distinct training
+recipes and source terms; the accompanying DINOv2 Apache2.0, DLC2021 CC-BY-SA2.5,
+and inherited attribution/license files remain applicable. No raw training or
+phone videos are redistributed. The Base and Small model cards are included.
+
+The new outer runtime independently decodes each input once by the scored
+optional-PTS ordinal decoder, canonicalizes once, then computes72 Small and72
+Base views. Both per-backbone native/canonical sigmoid means are averaged with
+fixed equal weights, threshold0.5. No inference training, adaptive weighting,
+cross-file statistics, cached predictions, pseudo-labeling or network access.
+
+Primary stage1_dino assets are the S093 Small model; sibling stage1_dino_base
+assets are the S090 Base model. Base source lives under a separate subpackage.
+Older notices describe constituent/historical mechanisms, not the new combined
+view count. This notice supersedes any single-backbone description of S094.
+Main inference.py, requirements and every Stage2/3 payload remain scored S079.
+No official improvement is claimed; S079 remains champion pending a better score.

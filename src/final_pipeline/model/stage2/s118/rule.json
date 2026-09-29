@@ -1,0 +1,19 @@
+{
+  "schema": "s118-rule-v1",
+  "name": "S161_entry",
+  "note": "Exact S156 collision; observed participant crossing only; S109 fallback; side/evasion unchanged",
+  "collision_frame": {
+    "type": "rerank",
+    "package": "model/stage2/s144",
+    "min_n": 310,
+    "preserve_s109_fields": true
+  },
+  "entry_frame": {
+    "type": "track",
+    "package": "model/stage2/s161",
+    "fallback": "s109",
+    "side": false,
+    "min_n": 0,
+    "budget_seconds": 240
+  }
+}

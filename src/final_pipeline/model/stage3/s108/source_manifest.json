@@ -1,0 +1,121 @@
+{
+  "revision": "204698b45b3712590f06245fbfba32d3be539812",
+  "import_rewrites": {
+    "from src.masks.utils import apply_masks": "from .masks import apply_masks",
+    "from src.utils.tensors import trunc_normal_": "from .tensors import trunc_normal_",
+    "from app.vjepa_2_1.models.utils.modules import Block": "from .modules import Block",
+    "from app.vjepa_2_1.models.utils.patch_embed import PatchEmbed, PatchEmbed3D": "from .patch_embed import PatchEmbed, PatchEmbed3D"
+  },
+  "files": {
+    "vendor/vision_transformer.py": {
+      "source": "app/vjepa_2_1/models/vision_transformer.py",
+      "raw": {
+        "bytes": 18195,
+        "sha256": "d2932eabeba684d8f558302a13cfd4be70a0170ee5112f5a794652d0a29089b9"
+      },
+      "vendored": {
+        "bytes": 18125,
+        "sha256": "e212367e355248a45bf1a3cc3a44ffd40d703906e99fcb26b0c5c15f8e8782d6"
+      }
+    },
+    "vendor/modules.py": {
+      "source": "app/vjepa_2_1/models/utils/modules.py",
+      "raw": {
+        "bytes": 16963,
+        "sha256": "64be6a87bd9f18d385f4e44186db3347d1665e18a1f0511d51d3b305531562e2"
+      },
+      "vendored": {
+        "bytes": 16963,
+        "sha256": "64be6a87bd9f18d385f4e44186db3347d1665e18a1f0511d51d3b305531562e2"
+      }
+    },
+    "vendor/patch_embed.py": {
+      "source": "app/vjepa_2_1/models/utils/patch_embed.py",
+      "raw": {
+        "bytes": 1883,
+        "sha256": "29e11ab97ab3ccdef107d6a7d0d7b374b58e712076cc3561f07b7e603c9b5165"
+      },
+      "vendored": {
+        "bytes": 1883,
+        "sha256": "29e11ab97ab3ccdef107d6a7d0d7b374b58e712076cc3561f07b7e603c9b5165"
+      }
+    },
+    "vendor/masks.py": {
+      "source": "src/masks/utils.py",
+      "raw": {
+        "bytes": 660,
+        "sha256": "833f111a0fa5ffdbd3a6412e2dace2517c3c178f49c14f8bb631d9f6a070dfd0"
+      },
+      "vendored": {
+        "bytes": 660,
+        "sha256": "833f111a0fa5ffdbd3a6412e2dace2517c3c178f49c14f8bb631d9f6a070dfd0"
+      }
+    },
+    "vendor/tensors.py": {
+      "source": "src/utils/tensors.py",
+      "raw": {
+        "bytes": 1832,
+        "sha256": "782b58bd2af456e184750e5318ab773105108383f61b280fe4c7a90f46add2c8"
+      },
+      "vendored": {
+        "bytes": 1832,
+        "sha256": "782b58bd2af456e184750e5318ab773105108383f61b280fe4c7a90f46add2c8"
+      }
+    },
+    "vendor/LICENSE": {
+      "source": "LICENSE",
+      "raw": {
+        "bytes": 1087,
+        "sha256": "cf9b17822d1fcd4ff32ccbe14183386fb3adf6f2ff92dc184130823f7fc28173"
+      },
+      "vendored": {
+        "bytes": 1088,
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    },
+    "vendor/APACHE-LICENSE": {
+      "source": "APACHE-LICENSE",
+      "raw": {
+        "bytes": 11349,
+        "sha256": "a41e2fae9915ae56028f8dbd0bf27995f1907613cbcd2d81a61b010ad34e9fe9"
+      },
+      "vendored": {
+        "bytes": 11349,
+        "sha256": "a41e2fae9915ae56028f8dbd0bf27995f1907613cbcd2d81a61b010ad34e9fe9"
+      }
+    },
+    "windows5hz.py": {
+      "source": "candidates/s108_stage3_vjepa_accel/windows5hz.py",
+      "raw": {
+        "bytes": 4380,
+        "sha256": "bc6b323da81fe1394e33ce669d308376a73bc0b3e8ebb44407f2c930768e6fbd"
+      },
+      "vendored": {
+        "bytes": 4380,
+        "sha256": "bc6b323da81fe1394e33ce669d308376a73bc0b3e8ebb44407f2c930768e6fbd"
+      }
+    },
+    "cache.py": {
+      "source": "candidates/s108_stage3_vjepa_accel/cache.py",
+      "raw": {
+        "bytes": 2441,
+        "sha256": "74cbeea968565f4dfe32864f573f821779d75b1b38c320bfb08b05ce80d2ed17"
+      },
+      "vendored": {
+        "bytes": 2441,
+        "sha256": "74cbeea968565f4dfe32864f573f821779d75b1b38c320bfb08b05ce80d2ed17"
+      }
+    },
+    "head.py": {
+      "source": "candidates/s108_stage3_vjepa_accel/head.py",
+      "raw": {
+        "bytes": 2398,
+        "sha256": "8503e54bae6ddbb14179f099c12344f57e7d36f0e45a0f1338eada2ae79f0e02"
+      },
+      "vendored": {
+        "bytes": 2398,
+        "sha256": "8503e54bae6ddbb14179f099c12344f57e7d36f0e45a0f1338eada2ae79f0e02"
+      }
+    }
+  }
+}

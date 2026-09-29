@@ -1,0 +1,16 @@
+S109 reuses the scored S105 legacy motion model and the actual S108 V-JEPA
+encoder/task head. No new training, data acquisition or weights are involved.
+
+The existing S108 selection/head-config/evidence describe the reused video
+subsystem and its original pure-video submission, not the final S109 decoder.
+S109 selection.json plus the appended S109 dispatch override that deployment:
+75% S105 robust acceleration probabilities +25% V-JEPA probabilities, then
+the S105 effective11-sample edge smoother and log-bias(-.25,-.5,0,-.75).
+Mixture weights are probability coefficients, not a guaranteed percentage of
+preserved labels. This artifact has not demonstrated an official score gain.
+
+All original notices, model bytes, Stage1/2 functions and steering remain.
+On a per-file new-branch failure the existing S108 runtime retains the exact
+S105 acceleration/steering fallback. Missing/corrupt model assets remain fatal.
+Each file has independent state; no private inputs, adaptation or model updates
+are retained. The released base S108 archive is never mutated.

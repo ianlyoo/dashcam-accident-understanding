@@ -1,0 +1,32 @@
+S144 collision-only re-ranker v3 (E10_base rank-mean ensemble), 2026-09-27
+
+Fit sources: 750 Nexar train positives only (0 CCD, 0 negatives). Nominal Nexar
+time_of_event is not verified physical contact. No private evaluation files were
+used. Positive clips without a candidate within 1 s are omitted from training only.
+Members, each a NumPy-portable GBDT (same S142 config) fitted on all 750 clips:
+  1. embed_ctx_contact on the S142 top-10 candidates (S142 motion+box features,
+     contact dynamics, frozen DINOv2-small CLS change features, within-clip context);
+  2. ctx_contact on the top-20 candidates, voting on the first 10;
+  3. the S142 motion+box features alone (S142-equivalent score).
+The winner is the top-10 candidate with the best mean within-clip rank percentile.
+Five-fold grouped Nexar OOF hit@0.3 s: 348/750 versus S142 336/750 (selected
+after comparing several variants; exploratory).
+
+Nexar source: nexar-ai/nexar_collision_prediction, pinned Hugging Face revision
+aa97deda5a59f00bb7187739053b7c72e14374df. Copyright (c) 2025 Nexar Inc.
+Required citation: Moura, Daniel C., and Zvitia, Orly. "Nexar Collison Dataset."
+Hugging Face, 2025, https://huggingface.co/datasets/nexar-ai/nexar_collision_prediction.
+See NEXAR-DATASET-LICENSE.txt for the full terms. No raw clips are distributed.
+
+Detector: unmodified torchvision COCO Faster R-CNN ResNet50 FPN v2,
+https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_v2_coco-dd69338a.pth
+SHA256 dd69338a24b8d7381807e247652bdc356325bcbaf1cd3e092e00e0a1a58706bf.
+TorchVision BSD-3-Clause license is in model/licenses/TorchVision-LICENSE.txt.
+Embeddings: the DINOv2-small backbone already shipped at model/stage1_dino/backbone
+(no new weights); Apache-2.0, see model/licenses/DINOv2-LICENSE.txt. GBDT inference is pure NumPy; no sklearn or network is needed.
+
+Exact S142s arms: S109 Stage1, S141 Stage3; only Stage2 collision changes for
+n>310. Original S109 entry/side/evasion are preserved, except entry is clamped to
+collision if necessary. All reranking failures preserve S109 per clip.
+Training and extraction: candidates/s143_s144_overnight; OOF rows, caches and
+receipts: $DATA_DIR/s144_rr3/.

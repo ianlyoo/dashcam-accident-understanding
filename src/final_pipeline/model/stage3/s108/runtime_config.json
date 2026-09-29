@@ -1,0 +1,67 @@
+{
+  "schema": "s108-runtime-config-v1",
+  "release_ready": true,
+  "base_sha256": "55349240fb2d0e8dafb40a3096e270130f3a3da96d54a6282141b54eecc3b441",
+  "operator": {
+    "version": "s108-5hz-in-10hz-out-v1",
+    "block_frames": 64,
+    "input_indices": "clip(s-32+2*j,0,N-1);j=0..63",
+    "keep_temporal": [
+      8,
+      24
+    ],
+    "frames_per_row": 4,
+    "pool": "numpy-float64-6x6-mean-to-float32-row-major-4x4",
+    "codec": "float32-to-float16-to-float32",
+    "head": "S108Head",
+    "head_kwargs": {
+      "frames_per_row": 4
+    },
+    "head_sequence": "whole-file-ordered",
+    "decoder": "argmax",
+    "encoder_parameters": "float32",
+    "encoder_autocast": "cuda-bfloat16",
+    "crop": 384,
+    "resize_short": 438,
+    "interpolation": "cv2.INTER_LINEAR",
+    "rgb_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "rgb_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "fallback": "s105-accel-and-steering-on-observer-or-head-failure"
+  },
+  "legacy_assets": {
+    "stage3_accel_mlp.npz": {
+      "bytes": 310517,
+      "sha256": "ab2429271519f13730c53b53af32952ab87f844b5f3c22858e0f2472d769729e"
+    },
+    "stage3_accel_robust.npz": {
+      "bytes": 310583,
+      "sha256": "426df59dc5cb2cbc3633c9d2d458a07c9a61fa56fd46a6a2580ff7c73fd43fd8"
+    },
+    "stage3_temporal_ensemble.npz": {
+      "bytes": 14908,
+      "sha256": "5c685e94fdc5d2edb21cd5ee0d29906a674fdfa5262678524af75b5758f4baf7"
+    }
+  },
+  "assets": {
+    "encoder.pt": {
+      "bytes": 347379587,
+      "sha256": "813375a4c3622ddd5d019a38ce938fede962e07bf280df54780a49029f2194f9"
+    },
+    "head.pt": {
+      "bytes": 835023,
+      "sha256": "cb155a2ac2cfbdda14bcbd430ee3cbf99280830fd39f4284815b5599d219cf40"
+    },
+    "selection.json": {
+      "bytes": 1729,
+      "sha256": "7bc39c908fa28be495c7213dcd50ba64316d39d5a7bd511c7106fdb8b42f82df"
+    }
+  }
+}

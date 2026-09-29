@@ -1,0 +1,8 @@
+S176 definition-faithful bucket extension on exact S174, no new weights.
+Only S161 inside_from_start and inside_when_first_seen abstentions receive
+respectively first-clip entry and first-observation minus 0.2 second.
+S161/S174 accepted results and all other reasons remain unchanged.
+If S174 fails or the S176 rule fails, retain S174's per-clip output.
+Original S174 and detector notices/licenses remain bundled.
+No private evaluation input. Only entry_frame can change; inherited adapter
+clamps entry to collision and maps indices to original source frame IDs.

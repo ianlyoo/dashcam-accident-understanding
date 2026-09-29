@@ -1,0 +1,1 @@
+{"detector":"frcnn","weights":"../s144/detector.pth","max_side":640,"score":0.3,"params":{"grid":"absolute","batch":2,"sparse_max_samples":16,"max_detect_frames":64}}

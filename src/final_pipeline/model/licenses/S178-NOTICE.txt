@@ -1,0 +1,7 @@
+S178 geometric entry-side rule on exact S176. Original S161 accepted
+crossings may provide the screen-relative boundary side. In the two
+S176 already-inside buckets, a collision-anchor center left of 0.35 or
+right of 0.65 may provide side. S174-only crossings abstain from side.
+All other side predictions and every entry, collision and evasion
+prediction retain S176. Per-clip faults retain the original side.
+No new model weights or inference dependencies; original notices remain.

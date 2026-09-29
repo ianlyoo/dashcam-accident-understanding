@@ -1,0 +1,17 @@
+S156 top-2 collision cascade (S147 refiner family), 2026-09-27
+
+After the S144 re-ranker ranks the collision candidates of a long clip (n>310), the S147
+refiner v2 frame features are computed in +-45-frame windows around the onsets of the two
+best-ranked candidates, together with candidate-level features (rank, rank-mean score, gap
+to the best, member percentiles). A NumPy-portable binary frame GBDT (same config as S142)
+shortlists 8 frames, a pairwise GBDT picks the Copeland winner, and the collision moves from
+the S144 onset only if the winner's binary margin beats it by delta=0.2. Any refiner error
+keeps the unrefined S144 onset. Inputs are the S109 per-frame motion signals already
+computed for the clip; no new images are read and no network is needed.
+
+Fit sources: the 750 Nexar train positives only (same source, revision, citation and
+licence as S142/S144; see NEXAR-DATASET-LICENSE.txt and S144-NOTICE.txt); labels use the
+nominal Nexar time_of_event (not verified physical contact). Five-fold grouped OOF:
+hit@0.3 s 393/750 and hit@1 s 508/750, versus refiner v2 376/495 and S144 E10_base 348/489.
+No private evaluation files were used. Code and receipts: candidates/s143_s144_overnight/
+(s147_*, s156_*), $DATA_DIR/s144_rr3/refiner/.

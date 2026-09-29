@@ -1,0 +1,96 @@
+S077 FULLDATA dual-geometry shared MLP; SHA256 a6730625b80132e8f3641e92ac9d12eff8eb614a9bf5b70900f40f70e0130529.
+Prepared2026-09-10. Provenance notice; no new rights are granted.
+Final FIT:306 videos = 194 Scoop + 102 DLC + 10 official TRAIN videos.
+External held76 = 50 Scoop + 26 DLC and phone8 never enter FIT. Public10
+are seen FIT sanity/ABI only. Exactly six MLP fits: five numeric O/R target
+folds (304 FIT each) and final306, no search. Numeric pairing is not verified
+scene independence. Old OOF/held/phone evidence is not fresh confirmation.
+Dual protocol SHA256 f98076f17591d9e7c583349dccdebd0129a562170ce75c975c18458e4aafe691.
+Native and canonical720 each provide three cached variants per video, not six
+independent videos. Head/variant seed71 is unchanged; seed77 permutes200 native
+and200 canonical updates, one geometry for all videos in each update. Existing
+corpus/group/class weights and external ranking apply once per video.
+Native external372 retain original receipts; official TRAIN10 native features
+are newly extracted from provided inputs. No raw videos/descriptors are bundled.
+
+DINOv2-small: Meta / DINOv2 contributors, Oquab et al., DINOv2:
+Learning Robust Visual Features without Supervision (2023).
+Official code/weights: https://github.com/facebookresearch/dinov2
+HF checkpoint: https://huggingface.co/facebook/dinov2-small/tree/ed25f3a31f01632728cabb09d1542f84ab7b0056
+Revision ed25f3a31f01632728cabb09d1542f84ab7b0056.
+Backbone SHA256 ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1.
+Config SHA256 1809f83e3bdb1609a501a610ad4a742f4fd8ae44d72ca4aa0df52d1f2ac8628d.
+Apache License 2.0, included as DINOv2-LICENSE.txt. Backbone and config
+are unchanged. The HF model card is included; its authorship is HF's.
+No Cell-DINO or XRay-DINO model is used. No upstream DINO training images
+are redistributed. HF Transformers supplies the installed implementation;
+no upstream facebookresearch/dinov2 Python code is vendored here.
+
+Scoop: Mitigation of Recapture Attacks on Provenance-Based Media Authentication.
+Yuxin (Myles) Liu, Habiba Farrukh, Ardalan Amiri Sani, Sharad Agarwal, Gene Tsudik.
+Source/acquisition: official dataset archive at https://zenodo.org/records/16748852
+DOI https://doi.org/10.5281/zenodo.16748852
+Dataset license: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+The record also lists MIT for accompanying material; this notice does not
+relicense the videos as MIT. This head uses both native and frozen canonical720 RGB geometry before
+DINO feature extraction and fixed classifier fitting. No source media are in the ZIP.
+
+Document Liveness Challenge (DLC-2021).
+Creators, retaining the supplied DOI metadata spelling:
+Polevoy Dmitry, V.; Sigareva Irina, V.; Ershova Daria, M.; Arlazarov Vladimir, V.;
+Nikolaev Dmitry, P.; Zuheng, Ming; Muzzamil, Luqman Muhammad; Jean-Christophe, Burie.
+Part 1 (or/cg): https://zenodo.org/records/6466768
+Part 2 (re): https://zenodo.org/records/6466770
+License: CC BY-SA 2.5 Generic, https://creativecommons.org/licenses/by-sa/2.5/
+Use: 64 original/device-screen pairs from official or.zip and re.zip,
+102 videos (51 pairs) enter final FIT; 26 videos (13 pairs) are held out.
+The exported head includes DLC fitting under the existing CC BY-SA 2.5 terms. No source media or cached descriptors are bundled.
+Original supplied license text is included as DLC2021-license.txt.
+Face images were obtained using Generated Photos: https://generated.photos/
+DLC requests Generated Photos attribution in derivative works; it is retained here.
+This notice does not resolve whether trained parameters constitute a derivative
+work under applicable law, waive ShareAlike, or promise exclusive rights to
+third-party content. Preserve applicable upstream terms in downstream delivery.
+
+Inherited byte-identical S053 assets:
+- model/stage1/best.pt and model/stage3/best.pt: project-trained official DACON
+  starter MViTv2 checkpoints (random initialization, disclosed competition examples).
+- model/stage2/best.pt: official starter temporal head trained on DACON examples.
+- model/stage2/resnet18-f37072fd.pth: ImageNet-1K ResNet18, reserialized by the
+  official training notebook via torch.save(backbone.state_dict()). Its packaged
+  SHA256 dafc0067fc4ba2c82af811f92b82c0553d533904926844d1116e94a85791a760
+  is not the original download file's f37072fd... hash.
+- model/stage2/ssdlite320_mobilenet_v3_large_coco-a79551df.pth:
+  TorchVision pretrained COCO SSDLite320, unchanged upstream bytes.
+- model/stage1/s036_model.npz: Scoop features plus ten DACON public anchors;
+  retained inherited model, independent of the new full306 fit, which also uses official TRAIN10.
+- model/stage3/stage3_supervised_model.npz and stage3_temporal_ensemble.npz:
+  project models trained on comma2k19, 188 segments/21 routes.
+- model/stage3/stage3_accel_mlp.npz and stage3_accel_robust.npz:
+  S048 temporal360 acceleration models on the same comma2k19 route corpus.
+  S053 endpoint logic is retained. No CAN values are inference inputs.
+
+TorchVision 0.23.0: https://github.com/pytorch/vision/tree/v0.23.0
+BSD-3-Clause license included as TorchVision-LICENSE.txt; source ImageNet/COCO
+images have separate original terms. No upstream source images are bundled.
+ResNet18 origin: https://download.pytorch.org/models/resnet18-f37072fd.pth
+SSDLite origin: https://download.pytorch.org/models/ssdlite320_mobilenet_v3_large_coco-a79551df.pth
+comma2k19: https://github.com/commaai/comma2k19 ; MIT license included as comma2k19-LICENSE.txt.
+DACON starter and examples: https://dacon.io/competitions/official/236753/data
+Competition-provided material retains competition terms; no general sublicense
+or third-party redistribution permission is asserted.
+
+The s071_runtime package retains unchanged S071 bytes as single_runtime.py
+and adds the new dual runtime.py. One RGB decode, one frozen backbone/shared MLP,
+two sequential geometry extractions and two batch1 head calls. Probability is
+the fixed Python-float arithmetic mean of native/canonical sigmoid probabilities,
+threshold .5. No descriptor/global averaging or short-edge720 skip.
+S076 linear is verified for manifest compatibility but is not bundled.
+Inherited S053 Stage2/3 source/models remain unchanged; no S053 Stage1 fallback.
+Offline, read-only, per-file independent inference; no fitting or upload.
+Official preinstalled dependencies only. Improved competition rank is unknown.
+
+Second-round reporting must describe dataset identity, source, acquisition,
+license, actual usage and any submission restriction. The organizer reply at
+https://dacon.io/competitions/official/236753/talkboard/417203 is a reporting route,
+not a waiver of underlying licenses. No raw data are included in this archive.

@@ -1,0 +1,21 @@
+S172 visual collision timing on exact S171. DINOv2-Large by Meta/Facebook Research,
+https://github.com/facebookresearch/dinov2 and https://huggingface.co/facebook/dinov2-large
+revision 47b73eefe95e8d44ec3623f8890bd894b6ea2d6c, Apache-2.0; upstream license
+and model card are preserved in model/stage2/s172/backbone. Frozen backbone;
+temporal head fitted on the same 750 public Nexar positive clips documented
+by the inherited S160 notice. No private evaluation training or extraction.
+Only collision_frame and entry_frame=min(S171 entry, collision) can change.
+Per-file failure preserves exact S171. OOF decoder selection reuses 750
+clips; S160 458 is an incomplete-final-ensemble OOF proxy.
+
+S172 revision 2 changes the storage dtype of the DINO checkpoint from FP32
+to FP16, the dtype already used by this CUDA inference. All converted
+parameters equal original.to(float16); public-frame descriptors agree
+bit for bit. No training or parameter update. Conversion notice also
+appears in the safetensors header. Original source: 399fba97a95f22c36834418bc69373364a99af3a1153da1c0fb31db567c92e23
+
+S172 revision3: exact cached-frame 2.5 Hz subset, two-seed 30-epoch
+temporal heads unchanged; selected five-fold OOF 482/750 versus
+485/750 at 4 Hz and S160 proxy 458/750. Frozen DINO weights,
+batched FP16 autocast; 600 s S172 and 2700 s process guards
+return exact S171 collision and entry for remaining files.

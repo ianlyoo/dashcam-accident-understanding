@@ -1,0 +1,16 @@
+S105 exports the already-trained September15 S101 FIRST-block clean
+control heads. No S105 fit, CV, feature extraction or new cached evaluation was
+performed. These heads are the original first 100-update block: they start from
+the scored S097 initial heads with the original S097 clean-logit teacher and
+received clean-only exposure (jpeg_video_exposures=0 for both families), while
+the scored S101 delivery arm used the same plan, teacher, optimizer settings,
+random draws and 100 updates with symmetric clean/JPEG90 exposure.
+The S102 and S103 second-block continuations are not part of this arm's history;
+no second-block head, selection or evaluation is inherited or re-measured.
+Raw parameters and checkpoint status are copied byte-for-byte from the sealed
+first-block control. Decoder, backbones, 144 views, equal mixture, Stage2/3 and
+all prior notices are retained. No inference JPEG transform. Existing S101
+clean/JPEG held results are reused evidence, not new S105 measurements or an
+official score gain.
+S101 source plan SHA256: d5f7f881bd7d79c7950c76bc505f31ba28671e1cb2221aa705d2049e451d19c8
+S101 four-head seal SHA256: ed48113012eaad57e2516503d17e27f30935e7fa7fdaa4bcbb343f7ccd3f0005

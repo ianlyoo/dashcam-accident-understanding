@@ -1,0 +1,27 @@
+S093: short S079 head adaptation to the S092 additional DLC sessions.
+
+Same492 FIT videos and exact cached Small features as S092:194 Scoop,288 DLC
+and10 official TRAIN; old76 development and8 phone examples stay outside fitting.
+186 DLC native sessions (46original/140replay) are additional to the checked
+S065/S025 inventories, not fresh independent validation. Retain the DLC-2021
+CC-BY-SA2.5 notice and all inherited source/model attribution. No raw videos
+are redistributed in this package.
+
+Initialize the final model from the scored S079 final306 head. Each numeric
+CV model starts from its own old304-row fold head, never from the final model
+that contains its held rows. Bind initial hashes and training memberships.
+Then100 AdamW updates at3e-5,weight decay.01,clip1,global-drop.5,seed71;
+seed77 gives50 native/50 canonical updates. Optimizer moments start fresh.
+Same equal-corpus/class/source loss formula and external ranking coefficient.25.
+
+The from-scratch S092 result is retained: external71/76 but phone7/8, P02
+original probability.99612439. This distinct adaptation policy tests whether
+the scored initialization better preserves transfer; it is not an unreported
+epoch/learning-rate search or an official performance claim.
+
+Inference remains exactly S079's Small backbone, repaired independent decoder,
+four ordinals, native/canonical720 geometry and72 views, fixed shared MLP and
+threshold.5 mean of two sigmoid probabilities. Only head weights/config hash
+and this notice change. Main entry, requirements and all Stage2/3 bytes remain
+S079. No private evaluation training, adaptation, cross-file statistics or
+network access. Preserve S079 until a better eligible official result exists.

@@ -1,0 +1,94 @@
+--- a/model/stage2/s161/predict.py
++++ b/model/stage2/s161/predict.py
+@@ -721,0 +722,43 @@
++
++
++# S178 side-only extension on exact S176. The entry decision and detector path
++# remain S176; expose a side only for supported original S161 crossings or
++# lateral collision anchors in the two accepted S176 already-inside buckets.
++try:
++    _s178_previous_analyze = Tracker.analyze
++
++    def _s178_analyze(self, paths, numbers, collision_index):
++        result = _s178_previous_analyze(self, paths, numbers, collision_index)
++        side = None
++        try:
++            reason = result.get('reason')
++            original = getattr(self, '_s176_original_result', None)
++            if reason == 'crossing' and original is not None:
++                # S174-only added crossings lost a confident CCD side panel.
++                # Keep its inherited S109 side; retain the proven S161 boundary.
++                if _s176_previous_decide(original, 's109')[0] is not None:
++                    candidate = result.get('side')
++                    if candidate in ('LEFT', 'RIGHT'):
++                        side = candidate
++            elif reason in ('s176_inside_from_start',
++                            's176_inside_first_minus_0p2s') and original is not None:
++                box = original.get('anchor_box')
++                if isinstance(box, (list, tuple)) and len(box) >= 4:
++                    center = (float(box[0]) + float(box[2])) / 2.0
++                    if 0.0 <= center <= 0.35:
++                        side = 'LEFT'
++                    elif 0.65 <= center <= 1.0:
++                        side = 'RIGHT'
++        except torch.cuda.OutOfMemoryError:
++            raise
++        except Exception:
++            side = None
++        # The existing decide() does not consult side. Returning a copy keeps
++        # the S176 entry path unchanged and makes an error fail closed per clip.
++        out = Result(result)
++        out['side'] = side
++        return out
++
++    Tracker.analyze = _s178_analyze
++except Exception:
++    pass
+--- a/model/stage2/s118/adapter.py
++++ b/model/stage2/s118/adapter.py
+@@ -1017,0 +1018,35 @@
++
++
++# S178: consume only the S161/S176 side decision from the tracker diagnostics.
++# The S118 rule keeps side=false because its collision-preservation validator
++# requires it. This wrapper updates side after the exact S176 track call.
++try:
++    _s178_previous_predict_track = _predict_track
++
++    def _predict_track(ns, data_dir, model_dir, rule, base_call=None, diagnostics=None):
++        out = _s178_previous_predict_track(ns, data_dir, model_dir, rule,
++                                           base_call=base_call, diagnostics=diagnostics)
++        try:
++            if rule.get('entry_frame', {}).get('package') != 'model/stage2/s161':
++                return out
++            records = ns.get('_S118_LAST_DIAGNOSTICS', {}).get('clips', {})
++            if not records or 'entry_side' not in out:
++                return out
++            revised = out.copy()
++            for index, row in out.iterrows():
++                record = records.get(str(row['ID']), {})
++                if record.get('error'):
++                    continue
++                result = record.get('result') or {}
++                if result.get('reason') not in ('crossing', 's176_inside_from_start',
++                                                's176_inside_first_minus_0p2s'):
++                    continue
++                side = result.get('side')
++                if side in ('LEFT', 'RIGHT'):
++                    revised.at[index, 'entry_side'] = side
++            return revised
++        except Exception:
++            # Any side-application fault returns the exact S176 output.
++            return out
++except Exception:
++    pass
+--- /dev/null
++++ b/model/licenses/S178-NOTICE.txt
+@@ -0,0 +1,7 @@
++S178 geometric entry-side rule on exact S176. Original S161 accepted
++crossings may provide the screen-relative boundary side. In the two
++S176 already-inside buckets, a collision-anchor center left of 0.35 or
++right of 0.65 may provide side. S174-only crossings abstain from side.
++All other side predictions and every entry, collision and evasion
++prediction retain S176. Per-clip faults retain the original side.
++No new model weights or inference dependencies; original notices remain.

@@ -1,0 +1,18 @@
+S108 acceleration-only V-JEPA export over scored S105_clean1.zip.
+Official repository: https://github.com/facebookresearch/vjepa2
+Pinned revision: 204698b45b3712590f06245fbfba32d3be539812
+Checkpoint: https://dl.fbaipublicfiles.com/vjepa2/vjepa2_1_vitb_dist_vitG_384.pt
+Checkpoint SHA256: 848a77c33cc9e6649ed2119c9bea1e2c569bcdab9539ff3e7c02ccc2959ddf4d
+
+The encoder is derived exclusively from ema_encoder tensors, with strict
+model-state validation. Optimizer/predictor checkpoint state is not shipped.
+V-JEPA source copyrights and MIT LICENSE / APACHE-LICENSE are retained in
+model/stage3/s108_runtime/vendor/. Only the encoder's local imports were
+mechanically rewritten into the private package; no hub loader is shipped.
+source_manifest.json records raw and vendored file digests and the rewrites.
+
+The native10Hz output operator consumes subsampled5Hz video inputs. Published
+linked training configs used4fps; this is an explicit sampling adaptation.
+Each token uses full-window attention; nominal anchors are not local receptive
+field bounds. Final head provenance and parent selection are separate sealed
+files. Original S105 model assets, notices and Stage2 GRU fallback are retained.

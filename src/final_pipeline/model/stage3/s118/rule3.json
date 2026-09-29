@@ -1,0 +1,5 @@
+{
+  "schema": "s118-rule3-v1",
+  "name": "S141_steer_regression",
+  "steer_regression_package": "model/stage3/s141"
+}

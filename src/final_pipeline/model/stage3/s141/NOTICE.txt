@@ -1,0 +1,7 @@
+S141 continuous-signal steering regression
+
+Training data: existing public commaai/comma2k19 (MIT), 188 RAV4 + 202 Civic segments, 42 routes. Cached S047/S089 motion and S108/S124 V-JEPA features; existing base archive contains their upstream license notices. No hidden evaluation data, pseudo-labeling, feature extraction, or model updates at inference.
+
+Training: 744 inputs (360 temporal motion features + three 128D fixed projections of spatially pooled V-JEPA cells), 128/64 ReLU MLP, speed/acceleration/body yaw regression, 40 fixed epochs, CPU Adam, SmoothL1, seed 14199. Thresholds and normalization fitted on training data. Only yaw-derived steering is deployed; S109/S124 acceleration remains unchanged. Five route folds evaluated before final fit. See candidates/s141_s3reg/README.md and run.py/final.py for reproducibility; data and resumable fits under $DATA_DIR/s141_s3reg.
+
+Inference shares the original S109 feature extraction and encoder pass. A failed per-file regression leaves the S109 steering prediction for that file; no adaptation or cross-file prediction dependency.

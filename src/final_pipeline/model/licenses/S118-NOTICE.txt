@@ -1,0 +1,11 @@
+S118-family rule-driven Stage2 output override over the unchanged S109 predictor.
+
+The staged artifact adds rule-driven Stage2 and Stage3 adapters over the S109
+base carrier. A Stage2 rule may replace collision_frame and/or entry_frame per
+clip. A Stage3 rule may replace steer_label using a constant or the S124 frozen
+V-JEPA steering head with the existing S108 cell tensor. The S124 head was
+trained on public RAV4/Civic steering labels; no private evaluation data was
+used. Its weights and source are shipped only when the S124 rule selects them.
+An optional acceleration log-bias rule changes the final S109 75/25 mixture
+decoder while retaining its class order and all model weights.
+Rule constants and weights are chosen from public/external evidence.

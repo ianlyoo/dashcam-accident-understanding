@@ -1,0 +1,12 @@
+S079 dual-geometry challenger to scored S078.
+Same full306-trained shared MLP, backbone, dual adapter and fixed probability
+mean as the previously unscored S077. Its generic single_runtime.py is replaced
+by the exact runtime.py bytes of the successfully scored S078 archive. No new
+fit, threshold, view routing, frame selection or feature change is introduced.
+Cold import must bind the dual adapter to that repaired decoder before use.
+S078's Stage2/3 and main inference bytes are retained. Original S077 dataset,
+model and license notices remain applicable. Local phone8/8 versus linear7/8
+is a different tradeoff from external69/76 versus75/76, not overall dominance.
+Shared decoder execution is confirmed on S078; S079's score and whole-server
+runtime remain unknown. Preserve S078 unless this whole artifact improves it.
+No automatic upload or hidden-data adaptation.

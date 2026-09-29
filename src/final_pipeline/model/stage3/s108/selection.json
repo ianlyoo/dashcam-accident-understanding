@@ -1,0 +1,57 @@
+{
+  "schema": "s108-parent-selection-v1",
+  "decision": "export-final-trained-head",
+  "base_sha256": "55349240fb2d0e8dafb40a3096e270130f3a3da96d54a6282141b54eecc3b441",
+  "head": {
+    "bytes": 835023,
+    "sha256": "cb155a2ac2cfbdda14bcbd430ee3cbf99280830fd39f4284815b5599d219cf40"
+  },
+  "config": {
+    "bytes": 899,
+    "sha256": "624fa0252920b3e33a47e1138912baef6587471685e8dd171b828efb9d40cce1"
+  },
+  "seal": {
+    "bytes": 933,
+    "sha256": "1bb24309ef1d2a40a1bc83737a2bc36606a41f7db99c974dec295b27b4afd796"
+  },
+  "training_evidence": {
+    "bytes": 2749,
+    "sha256": "dfaccf278c0c943f89600a7bfd7a55b45541c78f5868e841000ad858fba0a5bc"
+  },
+  "operator": {
+    "version": "s108-5hz-in-10hz-out-v1",
+    "block_frames": 64,
+    "input_indices": "clip(s-32+2*j,0,N-1);j=0..63",
+    "keep_temporal": [
+      8,
+      24
+    ],
+    "frames_per_row": 4,
+    "pool": "numpy-float64-6x6-mean-to-float32-row-major-4x4",
+    "codec": "float32-to-float16-to-float32",
+    "head": "S108Head",
+    "head_kwargs": {
+      "frames_per_row": 4
+    },
+    "head_sequence": "whole-file-ordered",
+    "decoder": "argmax",
+    "encoder_parameters": "float32",
+    "encoder_autocast": "cuda-bfloat16",
+    "crop": 384,
+    "resize_short": 438,
+    "interpolation": "cv2.INTER_LINEAR",
+    "rgb_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "rgb_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "fallback": "s105-accel-and-steering-on-observer-or-head-failure"
+  },
+  "architecture_decision": "tracking/S108_model_selection.json",
+  "note": "Select actual seed10805 all390 final head after40epochs/1960optimizersteps; offline export QA and runtime review still required. S105 remains champion; no automatic upload."
+}

@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "clips": 750,
+  "fold_sizes": [
+    150,
+    150,
+    150,
+    150,
+    150
+  ],
+  "checkpoints": 40,
+  "exact_fold_membership": true,
+  "train_test_disjoint": true,
+  "ensemble_reconstruction_exact": true,
+  "head_sha256": "3ca4f0281c4e4faf03e79acc55c8e68ef9463210f5b29f88256ee29fb536799a",
+  "input_sha256": "0c6c6c070a6de896c6a37d8445bca6840ff3e0a21852b7125dce0dc7893f5c6b",
+  "checkpoint_sha256": {
+    "v1_f0_s0_ep15.pt": "6192fa325f690b68cac391135f217524d0a70aa7bb40cee09bfdd7292800c4ee",
+    "v1_f0_s1_ep15.pt": "cc27b95a083dd7ca0e80bfe709b0da47193ecf19f07b9facc162814331191f80",
+    "v1_f1_s0_ep15.pt": "4636c366136240c9472817376b609a713e3b1ceee89f5cd21f8fdd1301a726d9",
+    "v1_f1_s1_ep15.pt": "f7ae29040244de2f0420a196d1f03afd70c1cb713f19840a9c7ec9631de76b40",
+    "v1_f2_s0_ep15.pt": "24233a2a2897899e940580bbc5709cd3f65f074a4a8b2108d882db287b4d4659",
+    "v1_f2_s1_ep15.pt": "659af72ed46d58b9476d40460f75be637440da118d30bd670311c20604d3ba05",
+    "v1_f3_s0_ep15.pt": "fcfeee46f7a19b6343d9b7c8420065dc46bd6c8af0e1bc0eeb7e4144101029e5",
+    "v1_f3_s1_ep15.pt": "f723aef751f9fb511b81eb8c14a6bd2754b3904eaa2bbbbb9e8ecea8a276fd2b",
+    "v1_f4_s0_ep15.pt": "99109746dd63baa14d48d775b866a0590b7f25884874b17ef653a4a9c2c6d9ff",
+    "v1_f4_s1_ep15.pt": "77e68c3812f838c5012a1535ff37dd1a22f57a83b122ea0a5015442c1eea8fdd",
+    "v1_f0_s0_ep30.pt": "c9ae4d7ce237a241267bf38950f722ac69ef260f8a78b152df3cc9320d02db6e",
+    "v1_f0_s1_ep30.pt": "28123e774d516c1cb8f938f021197f19fc0cac77df254de26118b089f9ee6a7b",
+    "v1_f1_s0_ep30.pt": "962f1c23d9a9cd2bd16e4c64b0c677c8d4eeef236453e679d411cf15ba2e6223",
+    "v1_f1_s1_ep30.pt": "a2d4b9f05d71b98698ec23c4fbabd33a1684e370954821f6a7be78684d8152c5",
+    "v1_f2_s0_ep30.pt": "59a5ab5702f9c85e75f4414e171299da9de6dadbe5c784eb4764db5dddd805a5",
+    "v1_f2_s1_ep30.pt": "e3002a0016d042720f88fa957246f4df1907fdbd2595dee1870ad76cb5306e4e",
+    "v1_f3_s0_ep30.pt": "21d5adced49d1ab17c20b4f9f0889d2ad32e360b8c1e883c0d953b602f720f6a",
+    "v1_f3_s1_ep30.pt": "5d96ea6fee91aef10fbee12be4635d5a88ed52f36a44386628feb82541d66700",
+    "v1_f4_s0_ep30.pt": "fddbe1725c62ea40fc3fc97919e35547c2b17b2792aaa8b1b89b11e87e8ad053",
+    "v1_f4_s1_ep30.pt": "04b6bdba1821a1aaff2e51d231589cb70ec8d62a021486cd0e51c82e00723fea",
+    "v2mass_f0_s0_ep15.pt": "d7ccb2930becdc39b2bd7063f8087f43ff3d70054b8a4ad85a0545283a64f83c",
+    "v2mass_f0_s1_ep15.pt": "ba5a053f7909bc9044abfbc28ccb0abe096113108c6b52db34dbd1a344c0f284",
+    "v2mass_f1_s0_ep15.pt": "a17990d561bce407fafaea523a43e847169c6e37f95214d1c7a3b08362a41cf0",
+    "v2mass_f1_s1_ep15.pt": "fa5efaa295974db0df0b65fada1991e5b39cf51cab61bd9ab6d9a970b8c4f878",
+    "v2mass_f2_s0_ep15.pt": "f434701f161f3aa94107b088a64b8a8cdaca25b6b2ccd78d679b3a41d8a5ae4a",
+    "v2mass_f2_s1_ep15.pt": "f12331ac55e3372616d0a9376d4c23d39f12c98f07b23f519cf3081be492cfa4",
+    "v2mass_f3_s0_ep15.pt": "83266bfebde73239922578df16e976da9754097a05360e130efe4fec2e340a62",
+    "v2mass_f3_s1_ep15.pt": "9dff94c484555290eff37cf72879c032b030964727a23e2ac84d8487c433bdfc",
+    "v2mass_f4_s0_ep15.pt": "6a8da41f864079249e1bb338889d3aef818d721bdb4f583b3c78ee4886cdf1f5",
+    "v2mass_f4_s1_ep15.pt": "cc5d774d430de65ade12b0edf67a3199dcb919e2eed0c0e7f8f2b0494aa1dc85",
+    "v2mass_f0_s0_ep30.pt": "fa694324a1173f288e0af17eadcf2ddca7980299ea674a700c882744f1c34dc3",
+    "v2mass_f0_s1_ep30.pt": "0c4ccfbbb51a5a5f1b318236dc5eb383494582f8b18d70c92472d6057231f760",
+    "v2mass_f1_s0_ep30.pt": "d6d739bac132f3b5cbe84f30e36b5db37f94591405d3c2fc1ae0e09e2e4a9b83",
+    "v2mass_f1_s1_ep30.pt": "96663dc960b6b7324f894fc26c981445b669287c9c57e62f7f24ad5b6500a2b3",
+    "v2mass_f2_s0_ep30.pt": "c44c7f22fdd538e40bf77f5d2a99969eec3fd9469a24d966d8fc8cba12e58d5e",
+    "v2mass_f2_s1_ep30.pt": "8b02775c7f5fb497a547b6c2b5199e3b822c6e34cd57b71363d92696ee077c72",
+    "v2mass_f3_s0_ep30.pt": "8d3087b47c9f5a518f33b3d93e32915cf95c47477bad6f40c6c63bcb18b15964",
+    "v2mass_f3_s1_ep30.pt": "c24ca44aaf42fd7d79d6109cf1947060bbca61fbcd728d45f6500393921064f3",
+    "v2mass_f4_s0_ep30.pt": "a719dac91bf4b92be59f57da2e635b9d0fb0c0533ba05a1010e7f283254230b9",
+    "v2mass_f4_s1_ep30.pt": "00c6bf48419bce0a7cf9eb86b952fa726845653cf50c593a6002a8271fc75340"
+  },
+  "coarse_decoder_comparisons": 132,
+  "best_by_fit": {
+    "v1_ep15_s01": {
+      "tag": "v1_ep15_s01",
+      "kind": "product",
+      "weight": 0.5,
+      "half": 9,
+      "hits": 481,
+      "fold_hits": [
+        103,
+        92,
+        90,
+        94,
+        102
+      ]
+    },
+    "v1_ep30_s01": {
+      "tag": "v1_ep30_s01",
+      "kind": "mix",
+      "weight": 0.5,
+      "half": 6,
+      "hits": 484,
+      "fold_hits": [
+        105,
+        92,
+        87,
+        99,
+        101
+      ]
+    },
+    "v2mass_ep15_s01": {
+      "tag": "v2mass_ep15_s01",
+      "kind": "product",
+      "weight": 0.5,
+      "half": 9,
+      "hits": 484,
+      "fold_hits": [
+        101,
+        94,
+        90,
+        96,
+        103
+      ]
+    },
+    "v2mass_ep30_s01": {
+      "tag": "v2mass_ep30_s01",
+      "kind": "product",
+      "weight": 0.5,
+      "half": 9,
+      "hits": 485,
+      "fold_hits": [
+        102,
+        93,
+        89,
+        98,
+        103
+      ]
+    }
+  }
+}
